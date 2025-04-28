@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ebio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: #f8d6e0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    body.loaded {
+      opacity: 1;
+    }
+    h1, h2 {
+      margin-bottom: 1.5rem;
+      color: #b85c79;
+      font-weight: 600;
+    }
+    p {
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #d96d92;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      background: #fdf2f6;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 3rem;
+    }
+    .about-section {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-img img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fbb0c8;
+    }
+    .info-boxes {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .info-box {
+      flex: 1;
+      background: #f8c7d3;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    .button-link {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #fbb0c8;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .button-link:hover {
+      background: #e48baa;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>About Me</h1>
+  <div class="about-section">
+    <div class="about-img">
+      <img src="https://cdn.discordapp.com/avatars/1125587946087649310/2416e56e947dca6d9a45f0aa4d691ff1.png?size=4096" alt="Profile Picture">
+    </div>
+    <div class="about-text">
+      <p><strong>Name:</strong> rou</p>
+      <p><strong>Age:</strong> 14</p>
+      <p><strong>Pronouns:</strong> he/him</p>
+      <p><strong>Timezone:</strong> est</p>
+      <p>I love coding and furrys</p>
+    </div>
+  </div>
+
+  <div class="info-boxes">
+    <div class="info-box">
+      <h2>Hobbies</h2>
+      <p>Gaming, Coding</p>
+    </div>
+    <div class="info-box">
+      <h2>Socials</h2>
+      <p><a href="roulab.dev">Main website</a> | <a href="discord.com/users/1125587946087649310">Discord</a> | <a href="tiktok.com">Tiktok</a></p>
+    </div>
+  </div>
+
+  <a class="button-link" href="comm.html" onclick="fadeTransition(event)">View My Commissioned Art</a>
+</div>
+
+<script>
+  window.onload = function() {
+    document.body.classList.add('loaded');
+  };
+
+  function fadeTransition(event) {
+    event.preventDefault();
+    document.body.classList.remove('loaded');
+    setTimeout(() => {
+      window.location = event.target.href;
+    }, 500);
+  }
+</script>
+
+</body>
+</html>

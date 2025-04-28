@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Commissioned Art</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: #f8d6e0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    body.loaded {
+      opacity: 1;
+    }
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #b85c79;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      background: white;
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      pointer-events: none; /* disables clicking the image */
+      user-select: none;
+    }
+    .artist-button {
+      margin-top: 1rem;
+      background: #fbb0c8;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      max-width: 180px;
+    }
+    .artist-button:hover {
+      background: #e48baa;
+    }
+    .button-link {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #fbb0c8;
+      padding: 0.8rem 1.5rem;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .button-link:hover {
+      background: #e48baa;
+    }
+  </style>
+</head>
+<body>
+
+<h1>My Commissioned Art</h1>
+
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="https://via.placeholder.com/300x300.png?text=Art+1" alt="Art 1" />
+    <a href="https://tiktok.com/@artist1" target="_blank" class="artist-button" rel="noopener noreferrer">
+      View Artist on TikTok
+    </a>
+  </div>
+  <div class="gallery-item">
+    <img src="https://via.placeholder.com/300x300.png?text=Art+2" alt="Art 2" />
+    <a href="https://tiktok.com/@artist2" target="_blank" class="artist-button" rel="noopener noreferrer">
+      View Artist on TikTok
+    </a>
+  </div>
+</div>
+
+<a class="button-link" href="index.html" onclick="fadeTransition(event)">← Back to About Me</a>
+
+<script>
+  window.onload = function() {
+    document.body.classList.add('loaded');
+  };
+
+  function fadeTransition(event) {
+    event.preventDefault();
+    document.body.classList.remove('loaded');
+    setTimeout(() => {
+      window.location = event.target.href;
+    }, 500);
+  }
+</script>
+
+</body>
+</html>
